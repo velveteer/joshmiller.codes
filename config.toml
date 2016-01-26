@@ -1,0 +1,28 @@
+baseurl = "http://joshmiller.codes/"
+languageCode = "en-us"
+title = "Josh Miller"
+theme = "cocoa"
+canonifyurls = true
+pygmentsuseclasses = true
+#disqusShortname = "notjoshmiller"
+pluralizelisttitles = false
+
+[permalinks]
+	fixed = ":title/"
+	blog = "blog/:slug/"
+
+[params]
+Author = "Joshua Ian Miller"
+CacheBuster = true
+DateForm = "Jan 2, 2006"
+DateFormFull = "Mon Jan 2 2006 15:04:05 MST"
+Description = "Quiet desperation"
+#Email = "notjoshmiller@gmail.com"
+FaviconFile = "img/favicon.ico"
+#GATracker = "XYZ"
+GitHub = "//github.com/velveteer"
+Lang = "en"
+LinkedIn = "//linkedin.com/in/notjoshmiller" 
+SoundCloud = "//soundcloud.com/siphonic"
+Twitter = "//twitter.com/not_josh_miller"
+#ExtraCssFiles = [ "/css/override.css" ] 
