@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Quiet desperation">
+
+<base href="http://joshmiller.codes/">
+<title>
+
+
+     Identity as a service 
+
+</title>
+<link rel="canonical" href="http://joshmiller.codes/blog/identity-as-a-service/">
+
+
+<script type="text/javascript">
+    var baseURL = 'http:\/\/joshmiller.codes\/';
+    var host = baseURL.substring(0, baseURL.length - 1).replace(/\//g, '');
+    if ((host === window.location.host) && (window.location.protocol !== 'https:')) {
+        window.location.protocol = 'https:';
+    }
+</script>
+
+
+
+
+
+<link rel="stylesheet" href="http://joshmiller.codes/css/reset.css">
+<link rel="stylesheet" href="http://joshmiller.codes/css/pygments.css">
+<link rel="stylesheet" href="http://joshmiller.codes/css/main.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+
+
+
+
+
+<link rel="shortcut icon"
+
+    href="http://joshmiller.codes/img/favicon.ico"
+
+>
+
+
+
+</head>
+
+
+<body lang="en">
+
+<section class="header"> 
+    <div class="container">
+        <div class="content">
+            <a href="http://joshmiller.codes/"><div class="name">Joshua Ian Miller</div></a>
+            <nav>
+                <ul>
+                    <a href="http://joshmiller.codes/blog/"><li>Blog</li></a>
+                    <a href="http://joshmiller.codes/about/"><li>About</li></a>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</section>
+
+<section class="icons">
+    <div class="container">
+        <div class="content">
+
+        
+            <a href="//github.com/velveteer" target="_blank">
+                <i class="icon fa fa-github-alt"></i>
+            </a>
+        
+        
+        
+            <a href="//twitter.com/not_josh_miller" target="_blank">
+                <i class="icon fa fa-twitter"></i>
+            </a>
+        
+
+        
+            <a href="//linkedin.com/in/notjoshmiller" target="_blank">
+                <i class="icon fa fa-linkedin"></i>
+            </a>
+        
+
+        
+
+        
+            <a href="//soundcloud.com/siphonic" target="_blank">
+                <i class="icon fa fa-soundcloud"></i>
+            </a>
+        
+
+        
+        </div>
+    </div>
+</section>
+
+
+<section class="main post non-narrow zero-top-spacing">
+    <div class="container">
+        <div class="content">
+            <div class="front-matter">
+                <div class="title-container">
+                    <div class="page-heading">
+
+    Identity as a service
+
+</div>
+
+                    <div class="initials"><a href="http://joshmiller.codes/"></a></div>
+                </div>
+                <div class="meta">
+                    <div class="date" title="Sat Apr 25 2015 15:43:24 -0600">Apr 25, 2015</div>
+                    <div class="reading-time"><div class="middot"></div>5 minutes read</div>
+                </div>
+            </div>
+            <div class="markdown">
+                <p>What is online identity? This question provokes an abstracted inquiry into identity proper, which while beyond the scope of a blog post is a metaphysical contemplation worth considering. But online identity does bring up pertinent and practical questions regarding privacy and security. It also tends to conflict with our colloquial notion of identity. Does it reflect back onto our notion of a self-identity? Is it a reification of the self or a parallel process, a second self? Slavoj Žižek has claimed that online identities are expressions of an inner truth that we deny ourselves, and they are indicative of an empty medium of identification which is &ldquo;the subject itself&rdquo;.</p>
+
+<blockquote>
+<p>The VR persona thus offers a case of <em>imaginary</em> deception in so far as it externalizes-displays a false of myself (a timid man playing a hero in MUD&hellip;) and a <em>symbolic</em> deception in so far as it expresses the truth about myself in the guise of a game (by playfully adopting an aggressive person, I disclose my true aggressivity).</p>
+</blockquote>
+
+<p>I&rsquo;ll resign the identity studies to those who presuppose identity as a primary determination. My curiosity is concerned with the notion of identity as a <em>secondary</em> determination, as formulated by philosophers such as Gilles Deleuze and Jacques Derrida. In this case I think I can briefly illustrate (and over-simplify) how their post-structuralist theories of identity might be relevant to online identification.</p>
+
+<p>Take for example the nature of OAuth, which in my case has resulted in a rather large collection of &ldquo;authorized apps&rdquo; residing in my &ldquo;main identity stores&rdquo;. These main stores could include Google, Facebook, Twitter, LinkedIn, GitHub, and just about any other large data-collection service that we use to construct our online identities. Naturally we trust (to a certain degree) these services to protect our data so that we can use their representation of our identities across the web.</p>
+
+<p><img src="http://i.imgur.com/rH2IvBB.png" alt="" /></p>
+
+<p>All of these applications maintain an identity <em>in relation</em> to the original provider of said identity. Some might even expose their own constructions through yet another OAuth implementation, and that process could continue indefinitely. Are any of these individual OAuth consumers truly qualified to be online identities? Eventually the tree-like structure of an OAuth implementation across the web starts to look more rhizomatic. The source of truth for your virtual persona starts to become all of these applications in tandem, each of them sharing varying aspects of your collected data between themselves. This rhizome is a map of our various identities, showing that we may define our online self through a non-hierarchical network of integrated services.</p>
+
+<p>Beyond OAuth some applications refuse to manage users themselves and would rather offload to services like Stormpath or Auth0. The tagline on the Auth0 site reads <em>&ldquo;Eliminate the friction of identity for your applications and APIs&rdquo;</em>. They offer to sit between you and an identity provider (or you can leverage a managed user database) in order to better administrate your userbase. But I think this <em>friction</em> cannot be eliminated in the general sense, it is rather the constitutive element of online identity. The &ldquo;primary&rdquo; identity providers have emerged de facto by how much we have given them, while &ldquo;secondary&rdquo; providers can borrow only what is allowed to them. But what if these primary providers were not only a result of our manipulable self-creation? Surely they can aggregate from many other sources, perhaps from the very services to which they have provided identities. In this sense there is no primary provider of online identity &ndash; all providers are secondary. The primary identity is the identity of difference itself, or rather the dissolution of identity into a never-ending process of data mining and interconnected services.</p>
+
+<p>This <em>friction</em> between various data stores has yet to be fully resolved and will likely never be. Services like Gravatar offer a constant in the chaosmos beyond legal constants like given name and age, meanwhile decentralization of identity is being pursued by initiatives like OpenID. Over time these services could help bring us back into control over our online self, but I argue that full control is unattainable. In Deleuzian metaphysics the process underlying identity is one of constant difference, and this should hold true for our online personas as well.</p>
+
+<blockquote>
+<p>&hellip;the divergence of affirmed series forms a &ldquo;chaosmos&rdquo; and no longer a world; the aleatory point that traverses them forms a counter-self and no longer a self; and disjunction posited as a synthesis exchanges its theological principle for a diabolical principle &hellip; the Grand Canyon of the World, the &ldquo;crack&rdquo; of the self, and the dismembering of God.&rdquo;</p>
+</blockquote>
+
+<p>Deleuze touches upon the fact that identities do exist but they are secondary, they are the effect of more profound relations of difference. With each post, tweet, and commit we are contributing to an ever-growing and ever-mutating online identity. And think about the possibilities this opens up. For example Coderwall provides a helpful forum but also constructs a new, gamified version of a historical online identity (via commit history on GitHub, BitBucket, Codeplex, etc.). Coderwall badges can in turn be displayed back on a GitHub profile through organizations. This feedback between identity providers is what enables a differential relation to exist. Neither is a complete identity on its own but rather they contribute to a new identity through their interplay. In fact a &ldquo;complete&rdquo; identity cannot be achieved as it implies a final state, a telos, whereas a Deleuzian would admit the notion of an attractor when discussing teleology. The attractors in this case may in fact be big data, the large masses of mined information that pull everything into their gravitational wake.</p>
+
+<p>If I had to pick just one online profile to summarize my persona I would probably have to pick none of them. It&rsquo;s all or nothing &ndash; it&rsquo;s process or it&rsquo;s beyond representation. Thinkers like Deleuze (see <em>Difference and Repetition</em>) and Adorno (see <em>Negative Dialectics</em>) have tried to expose the gap that exists between representational thought (self as identity, identity as primary) and what cannot, in theory, be thought (pure difference, non-identity). Our online identities can easily get away from us, but they provide valuable insight on how we define ourselves and on what parts of our identity are malleable by consciousness. They fold back into our self-understanding as we watch the data grow and while we shrug at targeted advertisements.</p>
+
+                <br>
+                <p><a href="http://joshmiller.codes/blog/">Back to posts</a></p>
+            </div>
+            <br>
+            <div class="disqus">
+                
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+</body>
+</html>
+

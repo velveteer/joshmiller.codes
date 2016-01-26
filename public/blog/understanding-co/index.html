@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Quiet desperation">
+
+<base href="http://joshmiller.codes/">
+<title>
+
+
+     Understanding co 
+
+</title>
+<link rel="canonical" href="http://joshmiller.codes/blog/understanding-co/">
+
+
+<script type="text/javascript">
+    var baseURL = 'http:\/\/joshmiller.codes\/';
+    var host = baseURL.substring(0, baseURL.length - 1).replace(/\//g, '');
+    if ((host === window.location.host) && (window.location.protocol !== 'https:')) {
+        window.location.protocol = 'https:';
+    }
+</script>
+
+
+
+
+
+<link rel="stylesheet" href="http://joshmiller.codes/css/reset.css">
+<link rel="stylesheet" href="http://joshmiller.codes/css/pygments.css">
+<link rel="stylesheet" href="http://joshmiller.codes/css/main.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+
+
+
+
+
+<link rel="shortcut icon"
+
+    href="http://joshmiller.codes/img/favicon.ico"
+
+>
+
+
+
+</head>
+
+
+<body lang="en">
+
+<section class="header"> 
+    <div class="container">
+        <div class="content">
+            <a href="http://joshmiller.codes/"><div class="name">Joshua Ian Miller</div></a>
+            <nav>
+                <ul>
+                    <a href="http://joshmiller.codes/blog/"><li>Blog</li></a>
+                    <a href="http://joshmiller.codes/about/"><li>About</li></a>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</section>
+
+<section class="icons">
+    <div class="container">
+        <div class="content">
+
+        
+            <a href="//github.com/velveteer" target="_blank">
+                <i class="icon fa fa-github-alt"></i>
+            </a>
+        
+        
+        
+            <a href="//twitter.com/not_josh_miller" target="_blank">
+                <i class="icon fa fa-twitter"></i>
+            </a>
+        
+
+        
+            <a href="//linkedin.com/in/notjoshmiller" target="_blank">
+                <i class="icon fa fa-linkedin"></i>
+            </a>
+        
+
+        
+
+        
+            <a href="//soundcloud.com/siphonic" target="_blank">
+                <i class="icon fa fa-soundcloud"></i>
+            </a>
+        
+
+        
+        </div>
+    </div>
+</section>
+
+
+<section class="main post non-narrow zero-top-spacing">
+    <div class="container">
+        <div class="content">
+            <div class="front-matter">
+                <div class="title-container">
+                    <div class="page-heading">
+
+    Understanding co
+
+</div>
+
+                    <div class="initials"><a href="http://joshmiller.codes/"></a></div>
+                </div>
+                <div class="meta">
+                    <div class="date" title="Sun Apr 13 2014 15:43:24 -0600">Apr 13, 2014</div>
+                    <div class="reading-time"><div class="middot"></div>6 minutes read</div>
+                </div>
+            </div>
+            <div class="markdown">
+                <p>Or perhaps more suitably titled &ldquo;How I learned to stop worrying and love the thunk&rdquo;. The generator and the coroutine are not new concepts, but they are now a part of ECMAScript 6, and this allows us to play with cooperative multi-tasking in Node unstable via the <code>--harmony</code> flag.</p>
+
+<p>Why are generators worth implementing into the standard? The reasons are numerous, and anyone familiar with call/cc in Scheme, async/await in C#, or yield in Python will understand that re-entrant functions are a powerful low-level construct. Low-level because we don&rsquo;t manage the implicit state created by suspended functions, this is something the interpreter will handle. We are only concerned with how to pause, resume, and send values to generators.</p>
+
+<p>Further reading:
+<a href="http://blog.alexmaccaw.com/how-yield-will-transform-node">http://blog.alexmaccaw.com/how-yield-will-transform-node</a>
+<a href="http://devsmash.com/blog/whats-the-big-deal-with-generators">http://devsmash.com/blog/whats-the-big-deal-with-generators</a></p>
+
+<p>Generators by themselves aren&rsquo;t going to provide much for the average Javascript programmer beyond being factories for iterators. But the ability of generators to send <em>and</em> receive values is what enables cooperative multi-tasking.
+A few really smart people figured out how to use generators to handle flow-control of asynchronous functions, similar to how others use futures and promises. I like how co does it, but to each their own. The basic idea is that a generator can suspend its execution and yield a partially applied async function (also known as a thunk) or a promise to the caller. Exactly how this works varies between different libraries, so for a broader perspective I recommend looking at:</p>
+
+<ul>
+<li><a href="https://github.com/caolan/async">async</a></li>
+<li><a href="https://github.com/kriskowal/q">Q</a></li>
+<li><a href="https://github.com/visionmedia/co">co</a></li>
+<li><a href="https://github.com/jmar777/suspend">suspend</a></li>
+<li><a href="https://github.com/bjouhier/galaxy">galaxy</a></li>
+<li><a href="https://github.com/spion/genny">genny</a></li>
+<li><a href="https://github.com/creationix/gen-run">gen-run</a></li>
+</ul>
+
+<p>What most of them have in common is a way for the caller to handle a yielded thunk. Thunks are important in co because we want the <em>caller</em> of the generator to execute the async function and only resume the generator once the async function calls back. This works because the caller executes the thunk while passing it a callback, and this callback function will resume the generator with a value or throw an error inside of it. Most callback functions in Node should be using the cb(error, response) signature. Co assumes this convention, whereas suspend provides <code>suspend.resumeRaw()</code> for non-conventional callback signatures and galaxy can handle them <a href="https://github.com/bjouhier/galaxy#odd-callbacks">for the most part</a>.</p>
+
+<p>Further reading:
+<a href="http://fredkschott.com/post/2014/03/understanding-error-first-callbacks-in-node-js/">http://fredkschott.com/post/2014/03/understanding-error-first-callbacks-in-node-js/</a></p>
+
+<p>Regular callback:</p>
+
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">fs</span><span class="p">.</span><span class="nx">readFile</span><span class="p">(</span><span class="nx">path</span><span class="p">,</span> <span class="s1">&#39;utf8&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">//handle error</span>
+    <span class="c1">//parse response</span>
+<span class="p">});</span>
+</code></pre></div>
+
+
+<p>Thunkified:</p>
+
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">function</span> <span class="nx">readFile</span><span class="p">(</span><span class="nx">path</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="kd">function</span><span class="p">(</span><span class="nx">callback</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">fs</span><span class="p">.</span><span class="nx">readFile</span><span class="p">(</span><span class="nx">path</span><span class="p">,</span> <span class="s1">&#39;utf8&#39;</span><span class="p">,</span> <span class="nx">callback</span><span class="p">);</span>
+    <span class="p">};</span>
+<span class="p">}</span>
+<span class="c1">// Called via readFile(path)(callback)</span>
+<span class="c1">// Convention dictates a callback in the form cb(error, result)</span>
+</code></pre></div>
+
+
+<p>My explanation is a bit rough, but there are plenty of better examples of how this can work. One of my favorite tours of this functionality is written by TJ Holowaychuk (the author of the co library): <a href="https://medium.com/code-adventures/174f1fe66127">https://medium.com/code-adventures/174f1fe66127</a></p>
+
+<p>He gives a very basic example of how flow control can be accomplished with generators:</p>
+
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">fs</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;fs&#39;</span><span class="p">);</span>
+
+<span class="kd">function</span> <span class="nx">thread</span><span class="p">(</span><span class="nx">fn</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">gen</span> <span class="o">=</span> <span class="nx">fn</span><span class="p">();</span>
+    <span class="kd">function</span> <span class="nx">next</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kd">var</span> <span class="nx">ret</span> <span class="o">=</span> <span class="nx">gen</span><span class="p">.</span><span class="nx">next</span><span class="p">(</span><span class="nx">res</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nx">ret</span><span class="p">.</span><span class="nx">done</span><span class="p">)</span> <span class="k">return</span><span class="p">;</span>
+        <span class="nx">ret</span><span class="p">.</span><span class="nx">value</span><span class="p">(</span><span class="nx">next</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="nx">next</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="nx">thread</span><span class="p">(</span><span class="kd">function</span> <span class="o">*</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="k">yield</span> <span class="nx">read</span><span class="p">(</span><span class="s1">&#39;Readme.md&#39;</span><span class="p">);</span>
+    <span class="kd">var</span> <span class="nx">b</span> <span class="o">=</span> <span class="k">yield</span> <span class="nx">read</span><span class="p">(</span><span class="s1">&#39;package.json&#39;</span><span class="p">);</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="p">);</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">b</span><span class="p">);</span>
+<span class="p">});</span>
+
+<span class="kd">function</span> <span class="nx">read</span><span class="p">(</span><span class="nx">path</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="kd">function</span><span class="p">(</span><span class="nx">cb</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">fs</span><span class="p">.</span><span class="nx">readFile</span><span class="p">(</span><span class="nx">path</span><span class="p">,</span> <span class="s1">&#39;utf8&#39;</span><span class="p">,</span> <span class="nx">cb</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+
+
+<p>What I want to do here is step through each part of this basic example to show how it works. This is pretty much a simplication of what co does under the hood.</p>
+
+<p>Before we dive into this, I recommend reading Zef Hemel&rsquo;s amazing article on co here: <a href="http://zef.me/6096/callback-free-harmonious-node-js">http://zef.me/6096/callback-free-harmonious-node-js</a>. However, keep in mind that this method is not &ldquo;callback-free&rdquo; &ndash; we are definitely still using callbacks, but they are being abstracted from typical Node CPS.</p>
+
+<p>First let&rsquo;s look at what we&rsquo;re doing in the generator:</p>
+
+<p><div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">thread</span><span class="p">(</span><span class="kd">function</span> <span class="o">*</span><span class="p">()</span> <span class="p">{</span>
+
+    <span class="c1">// Suspend execution and send the partial function to the</span>
+    <span class="c1">// caller (the thread wrapper function)</span>
+    <span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="k">yield</span> <span class="nx">read</span><span class="p">(</span><span class="s1">&#39;Readme.md&#39;</span><span class="p">);</span>
+    <span class="p">...</span>
+<span class="p">});</span>
+</code></pre></div>
+</p>
+
+<p>Following the partially applied function is now our task. Where did it go? Remember that we yielded something that looks like:</p>
+
+<p><div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">// Thunky fresh</span>
+<span class="kd">function</span><span class="p">(</span><span class="nx">cb</span><span class="p">)</span> <span class="p">{</span> <span class="nx">fs</span><span class="p">.</span><span class="nx">readFile</span><span class="p">(</span><span class="s1">&#39;Readme.md&#39;</span><span class="p">,</span> <span class="s1">&#39;utf8&#39;</span><span class="p">,</span> <span class="nx">cb</span><span class="p">)</span> <span class="p">};</span>
+</code></pre></div>
+</p>
+
+<p>We yielded this to the thread function, so the current execution context looks like this:</p>
+
+<p><div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">// fn == the generator function *() from above</span>
+
+<span class="kd">function</span> <span class="nx">thread</span><span class="p">(</span><span class="nx">fn</span><span class="p">)</span> <span class="p">{</span>
+
+    <span class="c1">// Initializes the generator object</span>
+    <span class="kd">var</span> <span class="nx">gen</span> <span class="o">=</span> <span class="nx">fn</span><span class="p">();</span>
+
+    <span class="c1">// Looks familiar? It is the signature of a callback function</span>
+    <span class="kd">function</span> <span class="nx">next</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span> <span class="p">{</span>
+
+      <span class="c1">// next() is used to resume the generator from where it left</span>
+      <span class="c1">// off, and it can also take values to send to the generator</span>
+
+      <span class="c1">// On the first call to next() res is null, so the</span>
+      <span class="c1">// generator yields the thunk.</span>
+      <span class="c1">// We will pass in our own cb that calls next() with</span>
+      <span class="c1">// the result of the async operation</span>
+      <span class="kd">var</span> <span class="nx">ret</span> <span class="o">=</span> <span class="nx">gen</span><span class="p">.</span><span class="nx">next</span><span class="p">(</span><span class="nx">res</span><span class="p">);</span>
+
+      <span class="c1">// ret == { value: thunk, done: false }</span>
+      <span class="c1">// If the generator has nothing left to yield it returns done: true</span>
+      <span class="k">if</span> <span class="p">(</span><span class="nx">ret</span><span class="p">.</span><span class="nx">done</span><span class="p">)</span> <span class="k">return</span><span class="p">;</span>
+
+      <span class="c1">// Execute the thunk, passing in next(err, res) as the callback</span>
+      <span class="nx">ret</span><span class="p">.</span><span class="nx">value</span><span class="p">(</span><span class="nx">next</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="nx">next</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre></div>
+</p>
+
+<p>So the generator is still suspended, and we are running the async function with a callback that sends the result back to the generator:</p>
+
+<p><div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">fs</span><span class="p">.</span><span class="nx">readFile</span><span class="p">(</span><span class="s1">&#39;Readme.md&#39;</span><span class="p">,</span> <span class="s1">&#39;utf8&#39;</span><span class="p">,</span> <span class="nx">next</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span> <span class="p">{</span>
+
+    <span class="c1">// Will resume generator and send res</span>
+    <span class="c1">// &quot;var a&quot; in the generator will be assigned to the value of res</span>
+    <span class="nx">gen</span><span class="p">.</span><span class="nx">next</span><span class="p">(</span><span class="nx">res</span><span class="p">);</span>
+    <span class="p">...</span>
+<span class="p">);</span>
+</code></pre></div>
+</p>
+
+<p>When the callback is executed, we resume the generator and send it the result of the async operation. The generator will then continue until another yield or until it returns (run-to-completion).</p>
+
+<p>Ultimately each generator is blocked while waiting for the callback to resume it, and this can benefit flow control in a way similar to <code>promise.then()</code> or <code>future.wait()</code>. They can each kick off their own async operations, and they will only continue once those operations have completed or an error is thrown. With co, you can even nest generators and perform parallel async operations by yielding an array. I think that is pretty cool. An example can be seen here: <a href="https://github.com/visionmedia/co/blob/master/examples/generator-array.js">https://github.com/visionmedia/co/blob/master/examples/generator-array.js</a></p>
+
+<p>Using generators wrapped by co definitely cleans up our syntax and gives us synchronous-looking code that supports try/catch blocks. The downside is that every function that would accept a callback now needs to be wrapped into a thunk, and nested generators can be difficult to debug. I do not think that thunks are a bad practice, but they do change the signature of async functions. The <code>suspend.resume()</code> function from the <a href="https://github.com/jmar777/suspend#suspendresume">suspend library</a> offers to let us keep using a traditional signature where the last argument of an async operation is assumed to be a callback.</p>
+
+<p>I have been using co and various other thunkified libraries like co-monk, co-redis, and koa. I really think this approach to async flow control will help make Node a better place, but browser support for generators is still in flux. I recommend checking out co because it supports promises on top of thunks, and there are already a ton of thunkified libraries that integrate with it: <a href="https://github.com/visionmedia/co/wiki">https://github.com/visionmedia/co/wiki</a></p>
+
+                <br>
+                <p><a href="http://joshmiller.codes/blog/">Back to posts</a></p>
+            </div>
+            <br>
+            <div class="disqus">
+                
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+</body>
+</html>
+

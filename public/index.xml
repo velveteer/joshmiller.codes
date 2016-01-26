@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Josh Miller</title>
+    <link>http://joshmiller.codes/</link>
+    <description>Recent content on Josh Miller</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 22 Aug 2015 06:42:21 -0700</lastBuildDate>
+    <atom:link href="http://joshmiller.codes/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>About</title>
+      <link>http://joshmiller.codes/about/</link>
+      <pubDate>Sat, 22 Aug 2015 06:42:21 -0700</pubDate>
+      
+      <guid>http://joshmiller.codes/about/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;//49.media.tumblr.com/4f34bbb2eb2cb5e716bb81f6997e514c/tumblr_nykhdrhYGY1tl8u0ko1_400.gif&#34; class=&#34;profile&#34;&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Identity as a service</title>
+      <link>http://joshmiller.codes/blog/identity-as-a-service/</link>
+      <pubDate>Sat, 25 Apr 2015 15:43:24 -0600</pubDate>
+      
+      <guid>http://joshmiller.codes/blog/identity-as-a-service/</guid>
+      <description>&lt;p&gt;What is online identity? This question provokes an abstracted inquiry into identity proper, which while beyond the scope of a blog post is a metaphysical contemplation worth considering. But online identity does bring up pertinent and practical questions regarding privacy and security. It also tends to conflict with our colloquial notion of identity. Does it reflect back onto our notion of a self-identity? Is it a reification of the self or a parallel process, a second self? Slavoj Žižek has claimed that online identities are expressions of an inner truth that we deny ourselves, and they are indicative of an empty medium of identification which is &amp;ldquo;the subject itself&amp;rdquo;.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;The VR persona thus offers a case of &lt;em&gt;imaginary&lt;/em&gt; deception in so far as it externalizes-displays a false of myself (a timid man playing a hero in MUD&amp;hellip;) and a &lt;em&gt;symbolic&lt;/em&gt; deception in so far as it expresses the truth about myself in the guise of a game (by playfully adopting an aggressive person, I disclose my true aggressivity).&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;I&amp;rsquo;ll resign the identity studies to those who presuppose identity as a primary determination. My curiosity is concerned with the notion of identity as a &lt;em&gt;secondary&lt;/em&gt; determination, as formulated by philosophers such as Gilles Deleuze and Jacques Derrida. In this case I think I can briefly illustrate (and over-simplify) how their post-structuralist theories of identity might be relevant to online identification.&lt;/p&gt;
+
+&lt;p&gt;Take for example the nature of OAuth, which in my case has resulted in a rather large collection of &amp;ldquo;authorized apps&amp;rdquo; residing in my &amp;ldquo;main identity stores&amp;rdquo;. These main stores could include Google, Facebook, Twitter, LinkedIn, GitHub, and just about any other large data-collection service that we use to construct our online identities. Naturally we trust (to a certain degree) these services to protect our data so that we can use their representation of our identities across the web.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://i.imgur.com/rH2IvBB.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;All of these applications maintain an identity &lt;em&gt;in relation&lt;/em&gt; to the original provider of said identity. Some might even expose their own constructions through yet another OAuth implementation, and that process could continue indefinitely. Are any of these individual OAuth consumers truly qualified to be online identities? Eventually the tree-like structure of an OAuth implementation across the web starts to look more rhizomatic. The source of truth for your virtual persona starts to become all of these applications in tandem, each of them sharing varying aspects of your collected data between themselves. This rhizome is a map of our various identities, showing that we may define our online self through a non-hierarchical network of integrated services.&lt;/p&gt;
+
+&lt;p&gt;Beyond OAuth some applications refuse to manage users themselves and would rather offload to services like Stormpath or Auth0. The tagline on the Auth0 site reads &lt;em&gt;&amp;ldquo;Eliminate the friction of identity for your applications and APIs&amp;rdquo;&lt;/em&gt;. They offer to sit between you and an identity provider (or you can leverage a managed user database) in order to better administrate your userbase. But I think this &lt;em&gt;friction&lt;/em&gt; cannot be eliminated in the general sense, it is rather the constitutive element of online identity. The &amp;ldquo;primary&amp;rdquo; identity providers have emerged de facto by how much we have given them, while &amp;ldquo;secondary&amp;rdquo; providers can borrow only what is allowed to them. But what if these primary providers were not only a result of our manipulable self-creation? Surely they can aggregate from many other sources, perhaps from the very services to which they have provided identities. In this sense there is no primary provider of online identity &amp;ndash; all providers are secondary. The primary identity is the identity of difference itself, or rather the dissolution of identity into a never-ending process of data mining and interconnected services.&lt;/p&gt;
+
+&lt;p&gt;This &lt;em&gt;friction&lt;/em&gt; between various data stores has yet to be fully resolved and will likely never be. Services like Gravatar offer a constant in the chaosmos beyond legal constants like given name and age, meanwhile decentralization of identity is being pursued by initiatives like OpenID. Over time these services could help bring us back into control over our online self, but I argue that full control is unattainable. In Deleuzian metaphysics the process underlying identity is one of constant difference, and this should hold true for our online personas as well.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&amp;hellip;the divergence of affirmed series forms a &amp;ldquo;chaosmos&amp;rdquo; and no longer a world; the aleatory point that traverses them forms a counter-self and no longer a self; and disjunction posited as a synthesis exchanges its theological principle for a diabolical principle &amp;hellip; the Grand Canyon of the World, the &amp;ldquo;crack&amp;rdquo; of the self, and the dismembering of God.&amp;rdquo;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Deleuze touches upon the fact that identities do exist but they are secondary, they are the effect of more profound relations of difference. With each post, tweet, and commit we are contributing to an ever-growing and ever-mutating online identity. And think about the possibilities this opens up. For example Coderwall provides a helpful forum but also constructs a new, gamified version of a historical online identity (via commit history on GitHub, BitBucket, Codeplex, etc.). Coderwall badges can in turn be displayed back on a GitHub profile through organizations. This feedback between identity providers is what enables a differential relation to exist. Neither is a complete identity on its own but rather they contribute to a new identity through their interplay. In fact a &amp;ldquo;complete&amp;rdquo; identity cannot be achieved as it implies a final state, a telos, whereas a Deleuzian would admit the notion of an attractor when discussing teleology. The attractors in this case may in fact be big data, the large masses of mined information that pull everything into their gravitational wake.&lt;/p&gt;
+
+&lt;p&gt;If I had to pick just one online profile to summarize my persona I would probably have to pick none of them. It&amp;rsquo;s all or nothing &amp;ndash; it&amp;rsquo;s process or it&amp;rsquo;s beyond representation. Thinkers like Deleuze (see &lt;em&gt;Difference and Repetition&lt;/em&gt;) and Adorno (see &lt;em&gt;Negative Dialectics&lt;/em&gt;) have tried to expose the gap that exists between representational thought (self as identity, identity as primary) and what cannot, in theory, be thought (pure difference, non-identity). Our online identities can easily get away from us, but they provide valuable insight on how we define ourselves and on what parts of our identity are malleable by consciousness. They fold back into our self-understanding as we watch the data grow and while we shrug at targeted advertisements.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Server-side PDF generation and Angular $resource</title>
+      <link>http://joshmiller.codes/blog/server-side-pdf-generation-and-angular-resource/</link>
+      <pubDate>Wed, 08 Oct 2014 15:43:24 -0600</pubDate>
+      
+      <guid>http://joshmiller.codes/blog/server-side-pdf-generation-and-angular-resource/</guid>
+      <description>&lt;p&gt;I ran into a problem recently where my Angular application needed to consume an API call that returned a PDF response. Apparently there are options to generate PDF documents client-side, such as Mozilla&amp;rsquo;s &lt;a href=&#34;http://mozilla.github.io/pdf.js/&#34;&gt;PDF.js&lt;/a&gt;, but in this case I had no control over the data. The scenario looked like this:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Send a HTTP request with an Accept header of &lt;code&gt;application/pdf&lt;/code&gt; and expect to recieve a PDF byte-stream response.&lt;/li&gt;
+&lt;li&gt;Allow the user to download this PDF from their browser after making the call.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;I had no access to the server in this scenario since my Angular application is stateless and relies primarily on ngResource to consume external API payloads. I simply wanted the user to click a &amp;ldquo;Download PDF&amp;rdquo; button and have the browser prompt them to download the file. I managed to accomplish this by adding a new method to the ngResource object:&lt;/p&gt;
+
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span class=&#34;nx&#34;&gt;pdf&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+    &lt;span class=&#34;nx&#34;&gt;method&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;GET&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+    &lt;span class=&#34;nx&#34;&gt;headers&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+        &lt;span class=&#34;nx&#34;&gt;accept&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;application/pdf&amp;#39;&lt;/span&gt;
+    &lt;span class=&#34;p&#34;&gt;},&lt;/span&gt;
+    &lt;span class=&#34;nx&#34;&gt;responseType&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;arraybuffer&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+    &lt;span class=&#34;nx&#34;&gt;cache&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;kc&#34;&gt;true&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+    &lt;span class=&#34;nx&#34;&gt;transformResponse&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;kd&#34;&gt;function&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;data&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+        &lt;span class=&#34;kd&#34;&gt;var&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;pdf&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+        &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;data&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+            &lt;span class=&#34;nx&#34;&gt;pdf&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;new&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;Blob&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;([&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;data&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;],&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+                &lt;span class=&#34;nx&#34;&gt;type&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;application/pdf&amp;#39;&lt;/span&gt;
+            &lt;span class=&#34;p&#34;&gt;});&lt;/span&gt;
+        &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+        &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+            &lt;span class=&#34;nx&#34;&gt;response&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;pdf&lt;/span&gt;
+        &lt;span class=&#34;p&#34;&gt;};&lt;/span&gt;
+    &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;There are a few things going on here that allow me to consume a PDF byte-stream as a resource and save it into a &lt;a href=&#34;https://developer.mozilla.org/en-US/docs/Web/API/Blob&#34;&gt;Blob object&lt;/a&gt;. Once I have a Blob object I can use a third-party library like &lt;a href=&#34;https://github.com/eligrey/FileSaver.js/&#34;&gt;FileSaver.js&lt;/a&gt; to present a download prompt.&lt;/p&gt;
+
+&lt;p&gt;The caching isn&amp;rsquo;t necessary here, but it is convenient to prevent strain on the server if multiple calls are made. The &lt;code&gt;responseType&lt;/code&gt; is necessary, otherwise the byte-stream is interpreted as a string and gives the user a corrupted PDF.&lt;/p&gt;
+
+&lt;p&gt;This was a unique scenario that involved ngResource and an API that used the same endpoint to return XML/JSON data along with a PDF document based on Accept headers. If anyone else finds themselves in a similar situation, give this a shot.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Understanding co</title>
+      <link>http://joshmiller.codes/blog/understanding-co/</link>
+      <pubDate>Sun, 13 Apr 2014 15:43:24 -0600</pubDate>
+      
+      <guid>http://joshmiller.codes/blog/understanding-co/</guid>
+      <description>&lt;p&gt;Or perhaps more suitably titled &amp;ldquo;How I learned to stop worrying and love the thunk&amp;rdquo;. The generator and the coroutine are not new concepts, but they are now a part of ECMAScript 6, and this allows us to play with cooperative multi-tasking in Node unstable via the &lt;code&gt;--harmony&lt;/code&gt; flag.&lt;/p&gt;
+
+&lt;p&gt;Why are generators worth implementing into the standard? The reasons are numerous, and anyone familiar with call/cc in Scheme, async/await in C#, or yield in Python will understand that re-entrant functions are a powerful low-level construct. Low-level because we don&amp;rsquo;t manage the implicit state created by suspended functions, this is something the interpreter will handle. We are only concerned with how to pause, resume, and send values to generators.&lt;/p&gt;
+
+&lt;p&gt;Further reading:
+&lt;a href=&#34;http://blog.alexmaccaw.com/how-yield-will-transform-node&#34;&gt;http://blog.alexmaccaw.com/how-yield-will-transform-node&lt;/a&gt;
+&lt;a href=&#34;http://devsmash.com/blog/whats-the-big-deal-with-generators&#34;&gt;http://devsmash.com/blog/whats-the-big-deal-with-generators&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Generators by themselves aren&amp;rsquo;t going to provide much for the average Javascript programmer beyond being factories for iterators. But the ability of generators to send &lt;em&gt;and&lt;/em&gt; receive values is what enables cooperative multi-tasking.
+A few really smart people figured out how to use generators to handle flow-control of asynchronous functions, similar to how others use futures and promises. I like how co does it, but to each their own. The basic idea is that a generator can suspend its execution and yield a partially applied async function (also known as a thunk) or a promise to the caller. Exactly how this works varies between different libraries, so for a broader perspective I recommend looking at:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/caolan/async&#34;&gt;async&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/kriskowal/q&#34;&gt;Q&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/visionmedia/co&#34;&gt;co&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/jmar777/suspend&#34;&gt;suspend&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/bjouhier/galaxy&#34;&gt;galaxy&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/spion/genny&#34;&gt;genny&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/creationix/gen-run&#34;&gt;gen-run&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;What most of them have in common is a way for the caller to handle a yielded thunk. Thunks are important in co because we want the &lt;em&gt;caller&lt;/em&gt; of the generator to execute the async function and only resume the generator once the async function calls back. This works because the caller executes the thunk while passing it a callback, and this callback function will resume the generator with a value or throw an error inside of it. Most callback functions in Node should be using the cb(error, response) signature. Co assumes this convention, whereas suspend provides &lt;code&gt;suspend.resumeRaw()&lt;/code&gt; for non-conventional callback signatures and galaxy can handle them &lt;a href=&#34;https://github.com/bjouhier/galaxy#odd-callbacks&#34;&gt;for the most part&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Further reading:
+&lt;a href=&#34;http://fredkschott.com/post/2014/03/understanding-error-first-callbacks-in-node-js/&#34;&gt;http://fredkschott.com/post/2014/03/understanding-error-first-callbacks-in-node-js/&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Regular callback:&lt;/p&gt;
+
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span class=&#34;nx&#34;&gt;fs&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;readFile&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;path&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;utf8&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;kd&#34;&gt;function&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;err&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;res&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+    &lt;span class=&#34;c1&#34;&gt;//handle error&lt;/span&gt;
+    &lt;span class=&#34;c1&#34;&gt;//parse response&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;});&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Thunkified:&lt;/p&gt;
+
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span class=&#34;kd&#34;&gt;function&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;readFile&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;path&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;kd&#34;&gt;function&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;callback&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+      &lt;span class=&#34;nx&#34;&gt;fs&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;readFile&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;path&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;utf8&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;callback&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+    &lt;span class=&#34;p&#34;&gt;};&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;span class=&#34;c1&#34;&gt;// Called via readFile(path)(callback)&lt;/span&gt;
+&lt;span class=&#34;c1&#34;&gt;// Convention dictates a callback in the form cb(error, result)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;My explanation is a bit rough, but there are plenty of better examples of how this can work. One of my favorite tours of this functionality is written by TJ Holowaychuk (the author of the co library): &lt;a href=&#34;https://medium.com/code-adventures/174f1fe66127&#34;&gt;https://medium.com/code-adventures/174f1fe66127&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;He gives a very basic example of how flow control can be accomplished with generators:&lt;/p&gt;
+
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span class=&#34;kd&#34;&gt;var&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;fs&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;require&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;fs&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+
+&lt;span class=&#34;kd&#34;&gt;function&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;thread&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;fn&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+    &lt;span class=&#34;kd&#34;&gt;var&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;gen&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;fn&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;();&lt;/span&gt;
+    &lt;span class=&#34;kd&#34;&gt;function&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;next&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;err&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;res&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+        &lt;span class=&#34;kd&#34;&gt;var&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;ret&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;gen&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;next&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;res&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+        &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;ret&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;done&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+        &lt;span class=&#34;nx&#34;&gt;ret&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;value&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;next&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+    &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+
+    &lt;span class=&#34;nx&#34;&gt;next&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;();&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+
+&lt;span class=&#34;nx&#34;&gt;thread&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;kd&#34;&gt;function&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+    &lt;span class=&#34;kd&#34;&gt;var&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;a&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;yield&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;read&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;Readme.md&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+    &lt;span class=&#34;kd&#34;&gt;var&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;b&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;yield&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;read&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;package.json&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+    &lt;span class=&#34;nx&#34;&gt;console&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;log&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+    &lt;span class=&#34;nx&#34;&gt;console&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;log&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;b&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;});&lt;/span&gt;
+
+&lt;span class=&#34;kd&#34;&gt;function&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;read&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;path&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;kd&#34;&gt;function&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;cb&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+        &lt;span class=&#34;nx&#34;&gt;fs&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;readFile&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;path&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;utf8&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;cb&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+    &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;What I want to do here is step through each part of this basic example to show how it works. This is pretty much a simplication of what co does under the hood.&lt;/p&gt;
+
+&lt;p&gt;Before we dive into this, I recommend reading Zef Hemel&amp;rsquo;s amazing article on co here: &lt;a href=&#34;http://zef.me/6096/callback-free-harmonious-node-js&#34;&gt;http://zef.me/6096/callback-free-harmonious-node-js&lt;/a&gt;. However, keep in mind that this method is not &amp;ldquo;callback-free&amp;rdquo; &amp;ndash; we are definitely still using callbacks, but they are being abstracted from typical Node CPS.&lt;/p&gt;
+
+&lt;p&gt;First let&amp;rsquo;s look at what we&amp;rsquo;re doing in the generator:&lt;/p&gt;
+
+&lt;p&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span class=&#34;nx&#34;&gt;thread&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;kd&#34;&gt;function&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+
+    &lt;span class=&#34;c1&#34;&gt;// Suspend execution and send the partial function to the&lt;/span&gt;
+    &lt;span class=&#34;c1&#34;&gt;// caller (the thread wrapper function)&lt;/span&gt;
+    &lt;span class=&#34;kd&#34;&gt;var&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;a&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;yield&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;read&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;Readme.md&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+    &lt;span class=&#34;p&#34;&gt;...&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;});&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/p&gt;
+
+&lt;p&gt;Following the partially applied function is now our task. Where did it go? Remember that we yielded something that looks like:&lt;/p&gt;
+
+&lt;p&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span class=&#34;c1&#34;&gt;// Thunky fresh&lt;/span&gt;
+&lt;span class=&#34;kd&#34;&gt;function&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;cb&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;fs&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;readFile&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;Readme.md&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;utf8&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;cb&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;};&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/p&gt;
+
+&lt;p&gt;We yielded this to the thread function, so the current execution context looks like this:&lt;/p&gt;
+
+&lt;p&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span class=&#34;c1&#34;&gt;// fn == the generator function *() from above&lt;/span&gt;
+
+&lt;span class=&#34;kd&#34;&gt;function&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;thread&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;fn&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+
+    &lt;span class=&#34;c1&#34;&gt;// Initializes the generator object&lt;/span&gt;
+    &lt;span class=&#34;kd&#34;&gt;var&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;gen&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;fn&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;();&lt;/span&gt;
+
+    &lt;span class=&#34;c1&#34;&gt;// Looks familiar? It is the signature of a callback function&lt;/span&gt;
+    &lt;span class=&#34;kd&#34;&gt;function&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;next&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;err&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;res&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+
+      &lt;span class=&#34;c1&#34;&gt;// next() is used to resume the generator from where it left&lt;/span&gt;
+      &lt;span class=&#34;c1&#34;&gt;// off, and it can also take values to send to the generator&lt;/span&gt;
+
+      &lt;span class=&#34;c1&#34;&gt;// On the first call to next() res is null, so the&lt;/span&gt;
+      &lt;span class=&#34;c1&#34;&gt;// generator yields the thunk.&lt;/span&gt;
+      &lt;span class=&#34;c1&#34;&gt;// We will pass in our own cb that calls next() with&lt;/span&gt;
+      &lt;span class=&#34;c1&#34;&gt;// the result of the async operation&lt;/span&gt;
+      &lt;span class=&#34;kd&#34;&gt;var&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;ret&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;gen&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;next&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;res&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+
+      &lt;span class=&#34;c1&#34;&gt;// ret == { value: thunk, done: false }&lt;/span&gt;
+      &lt;span class=&#34;c1&#34;&gt;// If the generator has nothing left to yield it returns done: true&lt;/span&gt;
+      &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;ret&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;done&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+
+      &lt;span class=&#34;c1&#34;&gt;// Execute the thunk, passing in next(err, res) as the callback&lt;/span&gt;
+      &lt;span class=&#34;nx&#34;&gt;ret&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;value&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;next&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+    &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+
+    &lt;span class=&#34;nx&#34;&gt;next&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;();&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/p&gt;
+
+&lt;p&gt;So the generator is still suspended, and we are running the async function with a callback that sends the result back to the generator:&lt;/p&gt;
+
+&lt;p&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span class=&#34;nx&#34;&gt;fs&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;readFile&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;Readme.md&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;utf8&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;next&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;err&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;res&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+
+    &lt;span class=&#34;c1&#34;&gt;// Will resume generator and send res&lt;/span&gt;
+    &lt;span class=&#34;c1&#34;&gt;// &amp;quot;var a&amp;quot; in the generator will be assigned to the value of res&lt;/span&gt;
+    &lt;span class=&#34;nx&#34;&gt;gen&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;next&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;res&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+    &lt;span class=&#34;p&#34;&gt;...&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/p&gt;
+
+&lt;p&gt;When the callback is executed, we resume the generator and send it the result of the async operation. The generator will then continue until another yield or until it returns (run-to-completion).&lt;/p&gt;
+
+&lt;p&gt;Ultimately each generator is blocked while waiting for the callback to resume it, and this can benefit flow control in a way similar to &lt;code&gt;promise.then()&lt;/code&gt; or &lt;code&gt;future.wait()&lt;/code&gt;. They can each kick off their own async operations, and they will only continue once those operations have completed or an error is thrown. With co, you can even nest generators and perform parallel async operations by yielding an array. I think that is pretty cool. An example can be seen here: &lt;a href=&#34;https://github.com/visionmedia/co/blob/master/examples/generator-array.js&#34;&gt;https://github.com/visionmedia/co/blob/master/examples/generator-array.js&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Using generators wrapped by co definitely cleans up our syntax and gives us synchronous-looking code that supports try/catch blocks. The downside is that every function that would accept a callback now needs to be wrapped into a thunk, and nested generators can be difficult to debug. I do not think that thunks are a bad practice, but they do change the signature of async functions. The &lt;code&gt;suspend.resume()&lt;/code&gt; function from the &lt;a href=&#34;https://github.com/jmar777/suspend#suspendresume&#34;&gt;suspend library&lt;/a&gt; offers to let us keep using a traditional signature where the last argument of an async operation is assumed to be a callback.&lt;/p&gt;
+
+&lt;p&gt;I have been using co and various other thunkified libraries like co-monk, co-redis, and koa. I really think this approach to async flow control will help make Node a better place, but browser support for generators is still in flux. I recommend checking out co because it supports promises on top of thunks, and there are already a ton of thunkified libraries that integrate with it: &lt;a href=&#34;https://github.com/visionmedia/co/wiki&#34;&gt;https://github.com/visionmedia/co/wiki&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
