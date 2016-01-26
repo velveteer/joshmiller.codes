@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Fixed on Josh Miller</title>
+    <link>http://joshmiller.codes/fixed/</link>
+    <description>Recent content in Fixed on Josh Miller</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 22 Aug 2015 06:42:21 -0700</lastBuildDate>
+    <atom:link href="http://joshmiller.codes/fixed/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>About</title>
+      <link>http://joshmiller.codes/about/</link>
+      <pubDate>Sat, 22 Aug 2015 06:42:21 -0700</pubDate>
+      
+      <guid>http://joshmiller.codes/about/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;//49.media.tumblr.com/4f34bbb2eb2cb5e716bb81f6997e514c/tumblr_nykhdrhYGY1tl8u0ko1_400.gif&#34; class=&#34;profile&#34;&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  <url>
+    <loc>http://joshmiller.codes/</loc>
+    <lastmod>2015-08-22T06:42:21-07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://joshmiller.codes/about/</loc>
+    <lastmod>2015-08-22T06:42:21-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://joshmiller.codes/blog/identity-as-a-service/</loc>
+    <lastmod>2015-04-25T15:43:24-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://joshmiller.codes/blog/server-side-pdf-generation-and-angular-resource/</loc>
+    <lastmod>2014-10-08T15:43:24-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://joshmiller.codes/blog/understanding-co/</loc>
+    <lastmod>2014-04-13T15:43:24-06:00</lastmod>
+  </url>
+  
+</urlset>

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Quiet desperation">
+
+<base href="http://joshmiller.codes/">
+<title>
+
+
+     Server-side PDF generation and Angular $resource 
+
+</title>
+<link rel="canonical" href="http://joshmiller.codes/blog/server-side-pdf-generation-and-angular-resource/">
+
+
+<script type="text/javascript">
+    var baseURL = 'http:\/\/joshmiller.codes\/';
+    var host = baseURL.substring(0, baseURL.length - 1).replace(/\//g, '');
+    if ((host === window.location.host) && (window.location.protocol !== 'https:')) {
+        window.location.protocol = 'https:';
+    }
+</script>
+
+
+
+
+
+<link rel="stylesheet" href="http://joshmiller.codes/css/reset.css">
+<link rel="stylesheet" href="http://joshmiller.codes/css/pygments.css">
+<link rel="stylesheet" href="http://joshmiller.codes/css/main.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+
+
+
+
+
+<link rel="shortcut icon"
+
+    href="http://joshmiller.codes/img/favicon.ico"
+
+>
+
+
+
+</head>
+
+
+<body lang="en">
+
+<section class="header"> 
+    <div class="container">
+        <div class="content">
+            <a href="http://joshmiller.codes/"><div class="name">Joshua Ian Miller</div></a>
+            <nav>
+                <ul>
+                    <a href="http://joshmiller.codes/blog/"><li>Blog</li></a>
+                    <a href="http://joshmiller.codes/about/"><li>About</li></a>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</section>
+
+<section class="icons">
+    <div class="container">
+        <div class="content">
+
+        
+            <a href="//github.com/velveteer" target="_blank">
+                <i class="icon fa fa-github-alt"></i>
+            </a>
+        
+        
+        
+            <a href="//twitter.com/not_josh_miller" target="_blank">
+                <i class="icon fa fa-twitter"></i>
+            </a>
+        
+
+        
+            <a href="//linkedin.com/in/notjoshmiller" target="_blank">
+                <i class="icon fa fa-linkedin"></i>
+            </a>
+        
+
+        
+
+        
+            <a href="//soundcloud.com/siphonic" target="_blank">
+                <i class="icon fa fa-soundcloud"></i>
+            </a>
+        
+
+        
+        </div>
+    </div>
+</section>
+
+
+<section class="main post non-narrow zero-top-spacing">
+    <div class="container">
+        <div class="content">
+            <div class="front-matter">
+                <div class="title-container">
+                    <div class="page-heading">
+
+    Server-side PDF generation and Angular $resource
+
+</div>
+
+                    <div class="initials"><a href="http://joshmiller.codes/"></a></div>
+                </div>
+                <div class="meta">
+                    <div class="date" title="Wed Oct 8 2014 15:43:24 -0600">Oct 8, 2014</div>
+                    <div class="reading-time"><div class="middot"></div>2 minutes read</div>
+                </div>
+            </div>
+            <div class="markdown">
+                <p>I ran into a problem recently where my Angular application needed to consume an API call that returned a PDF response. Apparently there are options to generate PDF documents client-side, such as Mozilla&rsquo;s <a href="http://mozilla.github.io/pdf.js/">PDF.js</a>, but in this case I had no control over the data. The scenario looked like this:</p>
+
+<ol>
+<li>Send a HTTP request with an Accept header of <code>application/pdf</code> and expect to recieve a PDF byte-stream response.</li>
+<li>Allow the user to download this PDF from their browser after making the call.</li>
+</ol>
+
+<p>I had no access to the server in this scenario since my Angular application is stateless and relies primarily on ngResource to consume external API payloads. I simply wanted the user to click a &ldquo;Download PDF&rdquo; button and have the browser prompt them to download the file. I managed to accomplish this by adding a new method to the ngResource object:</p>
+
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">pdf</span><span class="o">:</span> <span class="p">{</span>
+    <span class="nx">method</span><span class="o">:</span> <span class="s1">&#39;GET&#39;</span><span class="p">,</span>
+    <span class="nx">headers</span><span class="o">:</span> <span class="p">{</span>
+        <span class="nx">accept</span><span class="o">:</span> <span class="s1">&#39;application/pdf&#39;</span>
+    <span class="p">},</span>
+    <span class="nx">responseType</span><span class="o">:</span> <span class="s1">&#39;arraybuffer&#39;</span><span class="p">,</span>
+    <span class="nx">cache</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="nx">transformResponse</span><span class="o">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kd">var</span> <span class="nx">pdf</span><span class="p">;</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">pdf</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Blob</span><span class="p">([</span><span class="nx">data</span><span class="p">],</span> <span class="p">{</span>
+                <span class="nx">type</span><span class="o">:</span> <span class="s1">&#39;application/pdf&#39;</span>
+            <span class="p">});</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="p">{</span>
+            <span class="nx">response</span><span class="o">:</span> <span class="nx">pdf</span>
+        <span class="p">};</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+
+
+<p>There are a few things going on here that allow me to consume a PDF byte-stream as a resource and save it into a <a href="https://developer.mozilla.org/en-US/docs/Web/API/Blob">Blob object</a>. Once I have a Blob object I can use a third-party library like <a href="https://github.com/eligrey/FileSaver.js/">FileSaver.js</a> to present a download prompt.</p>
+
+<p>The caching isn&rsquo;t necessary here, but it is convenient to prevent strain on the server if multiple calls are made. The <code>responseType</code> is necessary, otherwise the byte-stream is interpreted as a string and gives the user a corrupted PDF.</p>
+
+<p>This was a unique scenario that involved ngResource and an API that used the same endpoint to return XML/JSON data along with a PDF document based on Accept headers. If anyone else finds themselves in a similar situation, give this a shot.</p>
+
+                <br>
+                <p><a href="http://joshmiller.codes/blog/">Back to posts</a></p>
+            </div>
+            <br>
+            <div class="disqus">
+                
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+</body>
+</html>
+
